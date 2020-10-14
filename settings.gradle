@@ -10,3 +10,4 @@
 rootProject.name = 'uppgifter'
 
 include 'seven:one', 'seven:two'
+include 'eight:one'

@@ -16,6 +16,8 @@ subprojects {
     dependencies {
         implementation files("$rootDir/lib/cs_util_window.jar")
     }
+
+    sourceSets.main.java.srcDirs = ["src"]
 }
 
 project(':seven:one') {

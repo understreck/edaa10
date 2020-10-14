@@ -31,3 +31,11 @@ project(':seven:two') {
         implementation project(':seven:one')
     }
 }
+
+project(':eight:one') {
+    mainClassName = 'uppgifter.TurtleRace'
+
+    dependencies {
+        implementation project(':seven:one')
+    }
+}

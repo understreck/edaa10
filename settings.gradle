@@ -8,3 +8,5 @@
  */
 
 rootProject.name = 'uppgifter'
+
+include 'seven:one', 'seven:two'

@@ -4,3 +4,28 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds
  */
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'application'
+
+    run {
+        standardInput = System.in
+    }
+
+    dependencies {
+        implementation files("$rootDir/lib/cs_util_window.jar")
+    }
+}
+
+project(':seven:one') {
+    apply plugin: 'java-library'
+}
+
+project(':seven:two') {
+    mainClassName='uppgifter.WanderingTurtles'
+
+    dependencies {
+        implementation project(':seven:one')
+    }
+}

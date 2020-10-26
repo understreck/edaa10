@@ -18,6 +18,7 @@ subprojects {
     }
 
     sourceSets.main.java.srcDirs = ["src"]
+    sourceSets.test.java.srcDirs = ["tests"]
 }
 
 project(':seven:one') {
@@ -44,10 +45,20 @@ project(':nine:premade') {
     apply plugin: 'java-library'
 }
 
-project('nine:one') {
+project(':nine:one') {
+    apply plugin: 'java-library'
+
     mainClassName = 'uppgifter.TestCardDeck'
 
     dependencies {
-        implementation project(':nine:premade')
+        api project(':nine:premade')
+    }
+}
+
+project(':nine:two') {
+    mainClassName = 'uppgifter.Patience'
+
+    dependencies {
+        implementation project(':nine:one')
     }
 }

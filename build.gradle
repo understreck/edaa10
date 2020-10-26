@@ -39,3 +39,11 @@ project(':eight:one') {
         implementation project(':seven:one')
     }
 }
+
+project('nine:one') {
+    mainClassName = 'uppgifter.TestCardDeck'
+
+    dependencies {
+        implementation project(':nine:premade')
+    }
+}

@@ -40,6 +40,10 @@ project(':eight:one') {
     }
 }
 
+project(':nine:premade') {
+    apply plugin: 'java-library'
+}
+
 project('nine:one') {
     mainClassName = 'uppgifter.TestCardDeck'
 

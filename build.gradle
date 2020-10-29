@@ -62,3 +62,17 @@ project(':nine:two') {
         implementation project(':nine:one')
     }
 }
+
+project(':ten:one') {
+    apply plugin: 'java-library'
+}
+
+project(':ten:premade') {
+    apply plugin: 'java-library'
+
+    mainClassName = 'uppgifter.TestLifeBoard'
+
+    dependencies {
+        api project(':ten:one')
+    }
+}

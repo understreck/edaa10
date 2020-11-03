@@ -15,6 +15,7 @@ subprojects {
 
     dependencies {
         implementation files("$rootDir/lib/cs_util_window.jar")
+        implementation files("$rootDir/lib/cs_edaa10.jar")
     }
 
     sourceSets.main.java.srcDirs = ["src"]
@@ -75,4 +76,8 @@ project(':ten:premade') {
     dependencies {
         api project(':ten:one')
     }
+}
+
+project(':inlOne:one') {
+    mainClassName = 'inlamning.Decypher'
 }

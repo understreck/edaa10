@@ -15,7 +15,7 @@ public class LifeBoard {
    * index row, col är utanför spelplanen returneras false
    */
   public boolean get(int row, int col) {
-    return row >= 0 && row < getRows() ? (col >= 0 && col < getCols() ? m_board[row][col] : false) : false;
+    return (row >= 0 && row < getRows()) && (col >= 0 && col < getCols()) ? m_board[row][col] : false;
   }
 
   /** Lagrar värdet val i rutan med index row, col */
@@ -30,7 +30,7 @@ public class LifeBoard {
 
   /** Tar reda på antalet kolonner */
   public int getCols() {
-    return getRows() > 0 ? m_board[0].length : 0;
+    return getRows() >= 0 ? m_board[0].length : 0;
   }
 
   /** Tar reda på aktuellt generationsnummer */

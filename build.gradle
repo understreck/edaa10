@@ -66,16 +66,18 @@ project(':nine:two') {
 
 project(':ten:one') {
     apply plugin: 'java-library'
+    
+    mainClassName = 'uppgifter.LifeController'
+
+    dependencies {
+        api project(':ten:premade')
+    }
 }
 
 project(':ten:premade') {
     apply plugin: 'java-library'
 
     mainClassName = 'uppgifter.TestLifeBoard'
-
-    dependencies {
-        api project(':ten:one')
-    }
 }
 
 project(':inlOne:one') {

@@ -3,21 +3,13 @@ package uppgifter;
 import java.util.*;
 
 public class LifeBoard {
-	private Integer index(int row, int column) {
-		return row * m_columns + column;
-	}
-
 	/**
 	 * Skapar en spelplan med rows rader och cols kolonner. Spelplanen är från
 	 * början tom, dvs alla rutorna är tomma och generationsnumret är 1.
 	 */
-	public LifeBoard(int rows, int cols) {
-		m_rows = rows;
-		m_columns = cols;
-		m_limit = index(m_rows - 1, m_columns - 1);
-
+	public LifeBoard(int rows, int collumns) {
+    m_board = new boolean[rows][collumns];
 		m_generation = 1;
-		m_cells = new HashMap<Integer, Boolean>();
 	}
 
 	/**
@@ -25,27 +17,27 @@ public class LifeBoard {
 	 * index row, col är utanför spelplanen returneras false
 	 */
 	public boolean get(int row, int col) {
-		return m_cells.getOrDefault(index(row, col), false);
+    return 
+        row >= 0 && row < getRows() ?
+            (col >= 0 && col < getCols() ?
+                m_board[row][col] :
+                false) :
+            false;
 	}
 
 	/** Lagrar värdet val i rutan med index row, col */
 	public void put(int row, int col, boolean val) {
-		final boolean outOfBounds = row < 0 || col < 0 || index(row, col) >= m_limit;
-		if (outOfBounds) {
-			return;
-		}
-
-		m_cells.put(index(row, col), val);
+    m_board[row][col] = val;
 	}
 
 	/** Tar reda på antalet rader */
 	public int getRows() {
-		return m_rows;
+		return m_board.length;
 	}
 
 	/** Tar reda på antalet kolonner */
 	public int getCols() {
-		return m_columns;
+		return getRows() > 0 ? m_board[0].length : 0;
 	}
 
 	/** Tar reda på aktuellt generationsnummer */
@@ -58,10 +50,6 @@ public class LifeBoard {
 		m_generation++;
 	}
 
-	private final int m_rows;
-	private final int m_columns;
-	private final Integer m_limit;
-
+  private boolean[][] m_board; //row major
 	private int m_generation;
-	private Map<Integer, Boolean> m_cells;
 }

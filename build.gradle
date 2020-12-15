@@ -80,6 +80,30 @@ project(':ten:one') {
     mainClassName = 'uppgifter.LifeController'
 }
 
+project(':eleven:shape') {
+    apply plugin: 'java-library'
+
+    mainClassName = 'uppgifter.ShapeTest'
+
+    dependencies {
+        api project(':eleven:impl')
+    }
+}
+
+project(':eleven:shape-list') {
+    apply plugin: 'java-library'
+
+    mainClassName = 'uppgifter.ShapeListTest'
+
+    dependencies {
+        api project(':eleven:impl')
+    }
+}
+
+project(':eleven:impl') {
+    apply plugin: 'java-library'
+}
+
 project(':inlOne:one') {
     mainClassName = 'inlamning.Decypher'
 }

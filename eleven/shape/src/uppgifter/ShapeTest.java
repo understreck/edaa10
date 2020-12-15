@@ -9,7 +9,7 @@ public class ShapeTest {
     testSq.draw(w);
     Shape testTr = new Triangle(400, 200, 100);
     testTr.draw(w);
-    Shape testCi = new Circle(400, 400, 50);
+    Shape testCi = new Circle(400, 400, 100);
     testCi.draw(w);
   }
 }

@@ -80,6 +80,10 @@ project(':ten:one') {
     mainClassName = 'uppgifter.LifeController'
 }
 
+project(':eleven:impl') {
+    apply plugin: 'java-library'
+}
+
 project(':eleven:shape') {
     apply plugin: 'java-library'
 
@@ -98,10 +102,6 @@ project(':eleven:shape-list') {
     dependencies {
         api project(':eleven:impl')
     }
-}
-
-project(':eleven:impl') {
-    apply plugin: 'java-library'
 }
 
 project(':inlOne:one') {

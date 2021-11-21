@@ -28,7 +28,7 @@ public class CardDeck {
 		for (int i = 0; i < m_cards.length; ++i) {
 			Card cardOne = m_cards[i];
 
-			int shufflePos = rng.nextInt(m_cards.length - 1);
+			int shufflePos = rng.nextInt(m_cards.length);
 			m_cards[i] = m_cards[shufflePos];
 
 			m_cards[shufflePos] = cardOne;
